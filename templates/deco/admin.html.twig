@@ -1,0 +1,61 @@
+{{include('header2.html.twig')}}
+
+    
+ <div class="animate-bounce flex justify-center m-12 px-7 haut" id="haut"><a href="{{path('app_Deco')}}" ><button class=" text-4xl text-bold shadow-lg shadow-blue-500/50 focus:shadow-outline bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-5 px-7 border border-blue-500 hover:border-transparent rounded">
+    CREER
+  </button>
+  </a>
+</div> 
+
+<script src="https://cdn.tailwindcss.com"></script>
+<section class="p-5">
+<table class=" border-2 border-black m-2 p-6">
+    
+ 
+    <thead> <!-- En-tête du tableau -->
+        <tr class="border-black">
+            <th class=" border-2 border-black p-5 m-6  text-xl">Nom</th>
+            <th class=" border-2 border-black  text-xl">Produit</th>
+            <th class=" border-2 border-black  text-xl">Prix</th>
+            <th class=" border-2 border-black  text-xl">Description</th>
+            <th class=" border-2 border-black text-xl">Option</th>
+
+        </tr>
+    </thead>
+ 
+    
+ 
+    <tbody> <!-- Corps du tableau -->
+        {% for table in monadmin  %}
+        <tr class="border-2  border-black">
+            <td class="border-2 border-black p-16">{{table.getNom}}</td>
+            <td class="border-2 border-black p-10 m-5"><img src="{{table.getImage}}" class="w-96 h-36"</td>
+            <td class="border-2 border-black p-16 text-blue-500 font-bold text-2xl">{{table.getPrix}}$</td>
+            <td class="border-2 border-black p-16">{{table.getDescription}}</td>
+            <td class="border-2 border-black p-16">
+
+            <div class="inline-flex space-x-4">
+                <a href="{{path('homeupdate',{'id':table.getId()})}}" ><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                    Modifier
+                  </button>
+                  </a>
+                  <a href="{{path('homedelete',{'id':table.getId()})}}" class="lien"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                    Supprimer
+                  </button>
+                  </a>
+                </div>
+            
+          
+            
+            </td>
+            
+        </tr>
+        {% endfor %}
+       
+    </tbody>
+ </table>
+
+</section>
+
+
+ 

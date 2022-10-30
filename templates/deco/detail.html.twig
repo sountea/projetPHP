@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Deco{% endblock %}
+
+{% block body %}
+{{include('homenav.html.twig')}}
+
+<link rel="stylesheet" href="{{asset('detail.css')}}">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Open+Sans&display=swap" rel="stylesheet">
+
+
+<section class="section1">
+<div class="container ">
+    <div class="container__half-image " style="background-image: url({{madeco.getImage()}})">
+    </div>
+    
+    <div class="container__half-content">
+      <h2 class="item-type">{{madeco.getMarque()}}</h2>
+      <h3 class="item-title">{{madeco.getNom()}}</h3>
+      <p class="item-description">{{madeco.getDescription()}}</p>
+      <div class="item-prices">
+        <span class="text-gray-500  text-3xl font-bold">{{madeco.getPrix()}}$</span>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt-10 mb-4">
+  <h1 class="animate-pulse font-bold text-6xl text-center grid">les décos de la même marque :</h1>
+
+
+
+  {% for element in comparaison %}
+  
+  
+  
+  <div class="container ">
+    <div class="container__half-image " style="background-image: url({{element.getImage()}})">
+    </div>
+    
+    <div class="container__half-content">
+      <h2 class="item-type">{{element.getMarque()}}</h2>
+      <h3 class="item-title">{{element.getNom()}}</h3>
+      <p class="item-description">{{element.getDescription()}}</p>
+      <div class="item-prices">
+        <span class="text-gray-500  text-3xl font-bold">{{element.getPrix()}}$</span>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+  {% endfor %}
+  
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&family=Open+Sans&display=swap');
+  .grid{
+    font-family: 'Merriweather', serif;
+  }
+  .grid {
+    animation-duration: 7s;
+    animation-name: slidein;
+
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+     
+    
+  }
+  
+
+</style>
+
+
+
+
+
+  {% endblock %}

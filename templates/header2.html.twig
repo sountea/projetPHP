@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Deco{% endblock %}
+
+{% block body %}
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <a href=""><img src="https://images.brandsupply.com/design_logo_identite_entreprise-mercadopierre-CSkdxilM_600_600.jpg" class="w-12 h-12 rounded-2xl mr-3"/></a>
+      <span class="font-semibold text-xl tracking-tight">DECO</span>
+    </div>
+   
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-end">
+      
+      
+      <div>
+        <a href="{{path('app_logout')}}" class="bouton inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white">Homepage</a>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+
+
+    .bouton:hover{
+    
+      
+      box-shadow: rgba(144, 238, 144, 0.4) 5px 5px, rgba(144, 238, 144, 0.3) 10px 10px, rgba(144, 238, 144, 0.2) 15px 15px, rgba(144, 238, 144, 0.1) 20px 20px, rgba(144, 238, 144, 0.05) 25px 25px;
+    
+    }
+    .bouton{
+      text-decoration:none;
+    }
+    
+  
+      </style>
+      {% endblock %}

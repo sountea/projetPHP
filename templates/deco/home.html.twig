@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Deco{% endblock %}
+
+{% block body %} 
+{{include('homenav.html.twig')}}
+<link  href="{{asset('home.css')}}" rel="stylesheet"/>
+
+<section class="tout">
+<div class="container">
+<div class="grid grid-cols-2 gap-4 mt-10 pl-28">
+{% for produit in all %}
+<div class="gitem">
+    
+        <img src="{{produit.getImage()}}"/>
+        <div class="grad-left">
+
+        <a href="{{path('homedetail',{'id':produit.getId()})}}">  <p>{{produit.getNom()}}</p> </a>     
+       
+        </div>
+</div>
+
+
+
+  
+
+
+{% endfor %}
+
+
+{% endblock %}
+
+
+

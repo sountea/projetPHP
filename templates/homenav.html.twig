@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Deco{% endblock %}
+
+{% block body %}
+
+<nav class="flex items-center justify-between flex-wrap bg-blue-500 p-6">
+  <div class="flex items-center flex-shrink-0 text-white space-x-6">
+    <a href="{{path('homedeco')}}"><div class=' h-12 w-12 picture rounded-xl '> </div></a>
+    <span class="font-semibold text-xl tracking-tight">DECO</span>
+  </div>
+ 
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto justify-end">
+    
+    <div>
+    </div>
+    <div>
+      <a href="{{path('homeadmin')}}" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Admin</a>
+    </div>
+  </div>
+</nav>
+
+
+
+<style>
+
+
+  .picture{
+  
+    background-image:url("https://images.brandsupply.com/design_logo_identite_entreprise-mercadopierre-CSkdxilM_600_600.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+  
+  
+  }
+  
+  
+
+    </style>
+  {% endblock %}
