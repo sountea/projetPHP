@@ -47,7 +47,6 @@ class DecoController extends AbstractController
     {
 
         $all= $deco->findAll();
-        dd($all);
 
 
         return $this->render('deco/home.html.twig', [
